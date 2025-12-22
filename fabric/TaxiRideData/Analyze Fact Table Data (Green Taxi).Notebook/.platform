@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Analyze Fact Table Data (Green Taxi)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4b6b80fc-c7a0-8631-4dd2-4a17be1d932d"
+  }
+}

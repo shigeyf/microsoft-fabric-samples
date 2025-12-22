@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "LH_NYC_TAXI_RAW"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6ecc00cb-fc3a-9f2c-4c11-1878b2ac112b"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Download NYC Taxi data",
+    "description": "Notebook for raw data collection"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a2741dcf-4ddf-a600-468b-0cc1002607d7"
+  }
+}

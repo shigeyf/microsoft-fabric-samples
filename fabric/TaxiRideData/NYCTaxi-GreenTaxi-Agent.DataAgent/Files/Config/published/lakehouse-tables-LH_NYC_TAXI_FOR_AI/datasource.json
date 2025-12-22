@@ -1,0 +1,273 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "0b2054a1-8302-b698-4853-a7906ba1b9bd",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": "Use `fact_green_tripdata` to gather the data for analysis.\r\nFilter with given parameters from the user.\r\n\r\nThe `dim_paymenttype` table provides the type information of patment_type.\r\n\r\nThe `dim_weekday` table provides the weekday name.\r\n\r\nThe `dim_location` table provides the location name of the dropoff_LocationID and pickup_LocationID.",
+  "displayName": "LH_NYC_TAXI_FOR_AI",
+  "type": "lakehouse_tables",
+  "userDescription": "This data source contains Green Taxi Trip data from 2009 year through 2024 year. This data is provided by from NYC Taxi.\r\nEach row represents one trip in one passenger engagement.\r\n\r\n- passenger_count: The number of people in the passenger of the trip.\r\n- total_amount: The total amount charged to passenger.\r\n- payment_type: The type of payment (Card=1,Cash=2).\r\n- trip_distance: The trip distance from pickup location to dropoff location.\r\n- trip_duration: The time taken in the trip.\r\n- pickup_date: The date when the passenger was picked up (UTC).\r\n- dropoff_date: The date when the passenger was dropped off (UTC).\r\n- pickup_LocationID: The locaton id of pickup (see dim_location table).\r\n- dropoff_LocationID: The locaton id of drop-off (see dim_location table).\r\n",
+  "metadata": {},
+  "elements": [
+    {
+      "id": "7130fb45-dced-46c2-b4a2-11098438b26d",
+      "is_selected": false,
+      "display_name": "dbo",
+      "type": "lakehouse_tables.schema",
+      "description": null,
+      "children": [
+        {
+          "id": "e1a94cf7-3c60-4da0-ba9d-2a5df0d27a2e",
+          "is_selected": true,
+          "display_name": "dim_location",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "7095d19f-ef7f-406f-8421-bc57ebbd48bd",
+              "is_selected": true,
+              "display_name": "Borough",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "039de616-6dd2-4afa-a349-0e84b2d5406e",
+              "is_selected": true,
+              "display_name": "LocationID",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "ef9a19f8-d7a5-456e-ad5a-eee1474ca9c0",
+              "is_selected": true,
+              "display_name": "service_zone",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "52a24105-1be0-4a13-8807-38a1d958bf76",
+              "is_selected": true,
+              "display_name": "Zone",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "3db4236f-fa24-441e-997a-999757cad692",
+          "is_selected": true,
+          "display_name": "dim_paymenttype",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "2852eb01-268d-47c9-ba8c-2b815bd00ed7",
+              "is_selected": true,
+              "display_name": "description",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "4d129429-19d8-45f6-a2ec-6d5175457002",
+              "is_selected": true,
+              "display_name": "payment_type",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "38f813c0-54b6-4ce8-aae0-b4bef547e175",
+          "is_selected": true,
+          "display_name": "dim_weekday",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "32907124-da58-47cb-8d05-cb182c67e0e6",
+              "is_selected": true,
+              "display_name": "description",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "35a61cc0-3509-4841-bbc3-4549993c2bd4",
+              "is_selected": true,
+              "display_name": "pickup_weekday",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "72da69df-86ba-4338-942e-273cf86fa6c6",
+          "is_selected": true,
+          "display_name": "fact_green_tripdata",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "98ac8a68-1846-41a4-94fd-8a867f3f4426",
+              "is_selected": true,
+              "display_name": "dropoff_datetime",
+              "type": "lakehouse_tables.column",
+              "data_type": "datetime2",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "745b856c-cec9-4017-af47-020d59e3e3bc",
+              "is_selected": true,
+              "display_name": "dropoff_LocationID",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "72bf520a-6458-4c04-bd74-c09bad468509",
+              "is_selected": true,
+              "display_name": "passenger_count",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "1293f07a-0197-4a66-9cd7-339bee158a70",
+              "is_selected": true,
+              "display_name": "payment_type",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "4cd41be9-5153-4df7-a0a8-fd7fe1a3d7ca",
+              "is_selected": true,
+              "display_name": "pickup_datetime",
+              "type": "lakehouse_tables.column",
+              "data_type": "datetime2",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "a005a40d-e697-4ae5-a341-739eba967eff",
+              "is_selected": true,
+              "display_name": "pickup_day",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "82b01a42-4bde-447d-860e-10aca276760e",
+              "is_selected": true,
+              "display_name": "pickup_hour",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "bc4e06d4-6902-4ea9-b452-f509b9b3fb2d",
+              "is_selected": true,
+              "display_name": "pickup_LocationID",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "7129c976-a077-4659-831b-06510593a8c7",
+              "is_selected": true,
+              "display_name": "pickup_minute",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "fcd032a5-d10f-4393-adb3-e756361102b8",
+              "is_selected": true,
+              "display_name": "pickup_month",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "9c184d9d-6b8d-4b92-9313-d3c41e190742",
+              "is_selected": true,
+              "display_name": "pickup_weekday",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "589c11ab-68a0-49c0-a850-6a0b8e144cea",
+              "is_selected": true,
+              "display_name": "pickup_year",
+              "type": "lakehouse_tables.column",
+              "data_type": "int",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "b607ce49-c56f-490f-a455-de1fc8601dd6",
+              "is_selected": true,
+              "display_name": "speed_mph",
+              "type": "lakehouse_tables.column",
+              "data_type": "float",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "8603435d-4609-4cdc-b424-981ccd0825db",
+              "is_selected": true,
+              "display_name": "total_amount",
+              "type": "lakehouse_tables.column",
+              "data_type": "float",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "b9a165fd-025d-44b1-879a-808d975a3af3",
+              "is_selected": true,
+              "display_name": "trip_distance",
+              "type": "lakehouse_tables.column",
+              "data_type": "float",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "24ad4fc3-c905-4025-92eb-2405c5278773",
+              "is_selected": true,
+              "display_name": "trip_duration",
+              "type": "lakehouse_tables.column",
+              "data_type": "float",
+              "description": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
